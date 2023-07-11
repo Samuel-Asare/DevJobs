@@ -104,7 +104,7 @@
 @media (min-width: 576px) and (max-width: 991.98px) {
   .company_header_block .left-side {
     width: 270px;
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 992px) {
@@ -154,6 +154,23 @@
 @media (min-width: 992px) {
   .company_header_block .left-side .image_div .company_icon {
     width: 5.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .company_header_block .left-side .company_details_div {
+    width: 200px;
+    text-align: center;
+  }
+}
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .company_header_block .left-side .company_details_div {
+    margin-left: 1rem;
+    height: 8.75rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media (min-width: 992px) {
