@@ -1,0 +1,58 @@
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  padding-top: 13rem;
+  padding-bottom: 2rem;
+}
+.container .card {
+  border-radius: 0.375rem;
+  background: #fff;
+  padding: 0 2rem 1rem 2rem;
+  margin-bottom: 1rem;
+}
+.container .card .img_div {
+  width: 3.125rem;
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  transform: translateY(-20px);
+}
+.container .card .img_div .card_image {
+  width: 80%;
+}
+.container .card .job_information {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.container .card .job_information .status {
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #6e8098;
+}
+.container .card .job_information .status .circle {
+  transform: translateY(-5px);
+}
+.container .card .job_information .position_div {
+  margin: 0.9rem 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.container .card .job_information .position_div .job_position {
+  color: #000;
+}
+.container .card .job_information .job_company {
+  padding-top: 1rem;
+  color: #6e8098;
+}
+.container .card .job_information .location {
+  margin-top: 2rem;
+  color: #5964e0;
+}/*# sourceMappingURL=JobCards.css.map */

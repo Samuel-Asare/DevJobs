@@ -1,0 +1,17 @@
+@import "./utilities";
+@import "./entities";
+
+#root,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $second-Light-Gray;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden !important;
+    position: relative;
+}

@@ -1,0 +1,79 @@
+@import "./utilities";
+
+$desktop: 992px;
+$tablet: 991.98px;
+
+@mixin tablet_screen {
+    @media (min-width:#{$mobile} ) and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop_screen {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    padding-top: 13rem;
+    padding-bottom: 2rem;
+
+    .card {
+        border-radius: 0.375rem;
+        background: $second-White;
+        padding: 0 2rem 1rem 2rem;
+        margin-bottom: 1rem;
+
+        .img_div {
+            width: 3.125rem;
+            height: 3.125rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1rem;
+            transform: translateY(-20px);
+            .card_image {
+                width: 80%;
+            }
+        }
+        .job_information {
+            height: fit-content;
+            .status {
+                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $second-Dark-Gray;
+                .circle {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .position_div {
+                margin: 0.9rem 0;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                .job_position {
+                    color: #000;
+                }
+            }
+
+            .job_company {
+                padding-top: 1rem;
+                color: $second-Dark-Gray;
+            }
+
+            .location {
+                margin-top: 2rem;
+                color: $prim-voilet;
+            }
+        }
+    }
+}

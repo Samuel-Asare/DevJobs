@@ -1,0 +1,91 @@
+@import "./utilities";
+
+$mobile: 576px;
+$tablet: 991.98px;
+$desktop: 992px;
+
+@mixin mobile_screen {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet_screen {
+    @media (min-width:#{$mobile} ) and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop_screen {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+.header {
+    width: 100vw;
+    height: 17vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1rem 0;
+    position: fixed;
+    z-index: 9;
+
+    @include mobile_screen {
+        height: 23vh;
+        background-image: url("../src/assets/mobile/bg-pattern-header.svg");
+    }
+
+    @include desktop_screen {
+        background-image: url("../src/assets/desktop/bg-pattern-header.svg");
+        border-bottom-left-radius: 36.25rem;
+    }
+
+    @include tablet_screen {
+        background-image: url("../src/assets/tablet/bg-pattern-header.svg");
+        border-bottom-left-radius: 36.25rem;
+    }
+
+    .logo {
+        img {
+            width: 7.1875rem;
+            height: 2rem;
+        }
+    }
+
+    .toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 6rem;
+        height: 1.5rem;
+
+        .toggle_click {
+            background-color: $second-White;
+            height: 100%;
+            width: 100%;
+            margin: 0 0.3rem;
+            border-radius: 3rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow-x: hidden;
+            .toggle_cycle {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: $prim-voilet;
+                position: absolute;
+                transition: ease-in-out 500ms right;
+                cursor: pointer;
+                &:hover {
+                    background-color: $prim-Light-Violet;
+                }
+            }
+        }
+    }
+}

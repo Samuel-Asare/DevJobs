@@ -1,0 +1,122 @@
+@import "./utilities";
+@import "./entities";
+
+$mobile: 576px;
+$tablet: 991.98px;
+$desktop: 992px;
+
+$swip_search_div: 766.5px;
+
+@mixin swip_serach_tablet {
+    @media (min-width: #{$swip_search_div}) {
+        @content;
+    }
+}
+
+@mixin mobile_screen {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet_screen {
+    @media (min-width:#{$mobile} ) and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop_screen {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+.pop_up {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh !important;
+    background-color: rgba(10, 10, 10, 0.594);
+    display: grid;
+    place-content: center;
+    // row-gap: 1.5rem;
+    @include swip_serach_tablet {
+        display: none;
+    }
+    .close_pop {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: $prim-voilet;
+        cursor: pointer;
+        width: 2rem;
+        transition: 600ms width ease-in-out;
+        &:hover {
+            width: 2.3rem;
+        }
+    }
+
+    .pop_up_div {
+        background-color: $second-White;
+        border-radius: 0.375rem;
+        margin: 0 auto;
+        @include mobile_screen {
+            width: 290px;
+        }
+
+        @include tablet_screen {
+            width: 400px;
+        }
+        .Pop_header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid $second-Gray;
+            padding: 2rem;
+            .location_icon {
+                margin-right: 1rem;
+            }
+            .pop_up_location {
+                width: 100%;
+                padding: 0.5rem 0.3rem;
+                border: 1px solid whitesmoke;
+                outline: none;
+                font-size: 1rem;
+            }
+        }
+
+        .pop_up_inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+
+            @include mobile_screen {
+                padding: 2rem 0;
+                width: 80%;
+                margin: 0 auto;
+            }
+            @include tablet_screen {
+                padding: 2rem;
+            }
+
+            .input {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                padding-bottom: 1rem;
+                .popup_input {
+                    margin-right: 1rem;
+                    cursor: pointer;
+                }
+                label {
+                    color: $second-Dark-Gray;
+                }
+            }
+            .button_1 {
+                width: 100%;
+            }
+        }
+    }
+}
