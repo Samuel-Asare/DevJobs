@@ -37,16 +37,16 @@ $desktop: 992px;
 
     @include mobile_screen {
         height: 23vh;
-        background-image: url("../src/assets/mobile/bg-pattern-header.svg");
+        background-image: url("/src/assets/mobile/bg-pattern-header.svg");
     }
 
     @include desktop_screen {
-        background-image: url("../src/assets/desktop/bg-pattern-header.svg");
+        background-image: url("/src/assets/desktop/bg-pattern-header.svg");
         border-bottom-left-radius: 36.25rem;
     }
 
     @include tablet_screen {
-        background-image: url("../src/assets/tablet/bg-pattern-header.svg");
+        background-image: url("/src/assets/tablet/bg-pattern-header.svg");
         border-bottom-left-radius: 36.25rem;
     }
 
